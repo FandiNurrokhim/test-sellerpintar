@@ -56,7 +56,7 @@ export default function StepNavigation({
       </div>
       {skip && (
         <Button
-          className="bg-transparent dark:bg-transparent hover:bg-transparent text-[#A3AED0] hover:text-[#001363] font-semibold"
+          className="bg-transparent dark:bg-transparent hover:bg-transparent text-[#A3AED0] hover:text-blue-600 hover:text-blue-800 transition font-semibold"
           onClick={onSkipStep}
           disabled={activeStep === maxSteps - 1 && !isLast}
         >

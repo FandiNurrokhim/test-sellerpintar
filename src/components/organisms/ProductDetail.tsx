@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ProductImageGallery } from "@/components/molecules/Product/Detail/ProductImageGalery";
-import { ProductDetailInfo } from "@/components/molecules/Product/Detail/ProductDetailInfo";
-import { ProductCard } from "@/components/molecules/Product/Card";
+import { ProductImageGallery } from "@/components/molecules/Article/Detail/ProductImageGalery";
+import { ProductDetailInfo } from "@/components/molecules/Article/Detail/ProductDetailInfo";
+import { ProductCard } from "@/components/molecules/Article/Card";
 
 // Komponen deskripsi lengkap
 const ProductFullDescription: React.FC<{ description: string }> = ({

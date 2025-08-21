@@ -13,7 +13,7 @@ import { Button } from "@/components/atoms/Forms/Button";
 import { ProductModal } from "./partials/form";
 import { EditProductModal } from "./partials/edit-form";
 import { DetailProductModal } from "./partials/detail-form";
-import { ProductBulkUpload } from "@/components/molecules/Product/ProductBulkUpload";
+import { ProductBulkUpload } from "@/components/molecules/Article/ProductBulkUpload";
 import { Product } from "@/schemas/products/products";
 
 import { productApi } from "@/utils/apis/product";
@@ -391,7 +391,7 @@ export default function ProductsPage() {
           variant="primary"
           title="Total Products"
           value={String(totalProducts)}
-          icon={<Package className="h-5 w-5 text-[#001363]" />}
+          icon={<Package className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
         />
         <WidgetHeader
           title="Active Products"

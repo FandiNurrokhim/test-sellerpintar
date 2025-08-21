@@ -21,7 +21,7 @@ export function ToggleSwitch({
       >
         <span
           className="
-          absolute left-0 top-0 !w-[69px] h-full flex items-center justify-center font-semibold text-base transition-all bg-white rounded-[47px] shadow-[8px_0px_11.4px_-2px_rgba(0,0,0,0.11)] text-[#001363] text-[11px]        "
+          absolute left-0 top-0 !w-[69px] h-full flex items-center justify-center font-semibold text-base transition-all bg-white rounded-[47px] shadow-[8px_0px_11.4px_-2px_rgba(0,0,0,0.11)] text-blue-600 hover:text-blue-800 transition text-[11px]        "
           style={{
             left: props.checked ? "19%" : "0",
             width: "50%",

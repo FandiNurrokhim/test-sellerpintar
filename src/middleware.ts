@@ -15,7 +15,7 @@ export async function middleware(req: NextRequest) {
     (pathname.startsWith("/dashboard") || pathname.startsWith("/profile"))
   ) {
     return NextResponse.redirect(new URL("/auth/login", req.url));
-  } else if (pathname === "/catalogue") {
+  } else if (pathname === "/articles") {
     return NextResponse.next();
   }
 

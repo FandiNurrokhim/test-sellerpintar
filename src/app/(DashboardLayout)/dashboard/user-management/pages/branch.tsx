@@ -194,7 +194,7 @@ export default function BranchPage() {
           variant="primary"
           title="Total Branches"
           value={String(branches.length)}
-          icon={<MapPin className="h-5 w-5 text-[#001363]" />}
+          icon={<MapPin className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
         />
         <WidgetHeader
           title="Organizations"

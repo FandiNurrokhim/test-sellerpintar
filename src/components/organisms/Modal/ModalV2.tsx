@@ -66,7 +66,7 @@ export default function Modal({
         ${className || ""}`}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 dark:border-white/10">
-          <h3 className="text-[18px] font-semibold text-[#001363] dark:text-white">
+          <h3 className="text-[18px] font-semibold text-blue-600 hover:text-blue-800 transition dark:text-white">
             {title}
           </h3>
           <button
@@ -76,7 +76,7 @@ export default function Modal({
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-5 w-5 text-[#001363] dark:text-white/80"
+              className="h-5 w-5 text-blue-600 hover:text-blue-800 transition dark:text-white/80"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"

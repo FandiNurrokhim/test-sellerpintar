@@ -275,7 +275,7 @@ export default function RoleFormModal({
                     id="deletable"
                     type="checkbox"
                     {...register("deletable")}
-                    className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="rounded border-gray-300 text-blue-600 hover:text-blue-800 transition focus:ring-blue-500"
                   />
                   <span className="text-sm text-gray-600">
                     Allow this role to be deleted

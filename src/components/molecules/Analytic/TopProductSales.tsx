@@ -34,7 +34,7 @@ export const TopProductSales: React.FC = () => (
       <h3 className="font-bold text-lg text-gray-900 dark:text-white">
         Top Product Sales
       </h3>
-      <Link href="/dashboard/products" className="text-xs text-blue-600 dark:text-blue-400">
+      <Link href="/dashboard/products" className="text-xs text-blue-600 hover:text-blue-800 transition dark:text-blue-400">
         View All
       </Link>
     </div>

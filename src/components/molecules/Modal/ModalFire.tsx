@@ -70,7 +70,7 @@ function Panel({
               boxShadow: "0 4px 27.1px 0 rgba(0, 0, 0, 0.11)",
             }}
           >
-            <h3 className="text-[18px] !font-sentient font-semibold text-[#001363] dark:text-white">
+            <h3 className="text-[18px] !font-sentient font-semibold text-blue-600 hover:text-blue-800 transition dark:text-white">
               {title}
             </h3>
             <button
@@ -80,7 +80,7 @@ function Panel({
             >
               <svg
                 viewBox="0 0 24 24"
-                className="h-5 w-5 text-[#001363] dark:text-white/80"
+                className="h-5 w-5 text-blue-600 hover:text-blue-800 transition dark:text-white/80"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

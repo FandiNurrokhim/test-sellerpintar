@@ -101,7 +101,7 @@ export const ImageFileUploadField: React.FC<ImageFileUploadFieldProps> = ({
         {image.isUploading && (
           <div className="flex items-center justify-center gap-2 p-4 border border-dashed border-blue-300 rounded-lg bg-blue-50 dark:bg-[#232336]">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
-            <span className="text-sm text-blue-600 dark:text-blue-400">
+            <span className="text-sm text-blue-600 hover:text-blue-800 transition dark:text-blue-400">
               Uploading image...
             </span>
           </div>

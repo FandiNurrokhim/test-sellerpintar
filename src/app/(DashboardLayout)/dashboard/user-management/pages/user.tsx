@@ -166,7 +166,7 @@ export default function UserPage() {
           variant="primary"
           title="Total Users"
           value={String(totalUsers)}
-          icon={<UserCircle className="h-5 w-5 text-[#001363]" />}
+          icon={<UserCircle className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
         />
         <WidgetHeader
           title="Active Users"

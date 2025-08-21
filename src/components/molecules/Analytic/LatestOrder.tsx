@@ -40,7 +40,7 @@ export const LatestOrder: React.FC = () => (
       </h3>
       <Link
         href="/dashboard/orders"
-        className="text-xs text-blue-600 dark:text-blue-400"
+        className="text-xs text-blue-600 hover:text-blue-800 transition dark:text-blue-400"
       >
         View All
       </Link>

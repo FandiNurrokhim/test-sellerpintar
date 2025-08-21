@@ -194,7 +194,7 @@ export function SiteHeader() {
             {theme === "dark" ? (
               <Moon size={20} className="text-blue-400" />
             ) : (
-              <Sun size={20} className="text-[#001363] dark:text-blue-400" />
+              <Sun size={20} className="text-blue-600 hover:text-blue-800 transition dark:text-blue-400" />
             )}
           </button>
 

@@ -1,19 +1,23 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/atoms/Forms/Button";
-import { FormField } from "@/components/templates/Forms/FormField";
-import { Input } from "@/components/atoms/Forms/Input";
-import { Label } from "@/components/atoms/Forms/Label";
+
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/atoms/ToastProvider";
 import { authApi } from "@/utils/api";
 import { useState } from "react";
 
-import { ControlledCheckbox } from "@/components/templates/Forms/ControlledCheckbox";
 import { useZodForm } from "@/hooks/useZodForm";
 import { signUpSchema, SignUpFormData } from "@/schemas/auth/register";
 import { splitFullName } from "@/utils/name";
+
+import { cn } from "@/lib/utils";
+import Logo from "../../../../../public/images/logos/LogoIpsum.png";
+import Image from "next/image";
+import { Button } from "@/components/atoms/Forms/Button";
+import { FormField } from "@/components/templates/Forms/FormField";
+import { Input } from "@/components/atoms/Forms/Input";
+import { Select } from "@/components/atoms/Forms/Select";
+import { Label } from "@/components/atoms/Forms/Label";
 
 export function SignUpForm({
   className,
@@ -26,37 +30,22 @@ export function SignUpForm({
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useZodForm(signUpSchema, {
     defaultValues: {
-      fullName: "",
-      email: "",
+      username: "",
       password: "",
-      confirmPassword: "",
-      agreedToTerms: false,
-      agreedToPrivacy: false,
+      role: "user",
     },
   });
 
   const onSubmit = async (data: SignUpFormData) => {
-    if (!data.agreedToTerms) {
-      showToast("You must agree to the Terms of Service.", "error");
-      return;
-    }
-    if (!data.agreedToPrivacy) {
-      showToast("You must accept the Privacy Policy.", "error");
-      return;
-    }
-
     setLoading(true);
     try {
-      const { firstName, lastName } = splitFullName(data.fullName);
       const response = await authApi.register({
-        firstName,
-        lastName,
-        email: data.email,
+        username: data.username,
         password: data.password,
+        role: data.role,
       });
 
       if (response) {
@@ -80,64 +69,30 @@ export function SignUpForm({
   };
 
   return (
-    <div className={cn("w-full h-full flex flex-col", className)} {...props}>
-      <div className="flex-1">
-        <form
-          className="p-6 md:p-8 space-y-6"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col items-start">
-              <h1 className="!font-sentient text-3xl font-bold text-left mb-2">
-                Sign Up
-              </h1>
-              <p className="text-[#151515]/50 text-md">
-                Create your account to start using our services. Fill in the
-                details below to get started.
-              </p>
-            </div>
+    <div className={cn("w-full bg-white", className)} {...props}>
+      <div className="flex-1 items-center overflow-y-auto grid p-0">
+        <form className="p-6 md:p-4 w-full" onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col gap-4">
+            {/* Logo, optional */}
+            <Image src={Logo} alt="Logo Title" height={24} className="mx-auto pt-6 pb-2 hidden lg:inline-block" />
 
             <FormField
-              label={
-                <Label htmlFor="fullName" className="!font-sentient">
-                  Full Name
-                </Label>
-              }
+              label={<Label htmlFor="username">Username</Label>}
               input={
                 <Input
-                  id="fullName"
-                  placeholder="Full Name"
-                  autoComplete="name"
-                  {...register("fullName")}
+                  id="username"
+                  type="text"
+                  placeholder="Username"
+                  autoComplete="username"
+                  {...register("username")}
+                  errorMessage={errors.username?.message}
                 />
               }
-              error={errors.fullName}
+              error={errors.username}
             />
 
             <FormField
-              label={
-                <Label htmlFor="email" className="!font-sentient">
-                  Email
-                </Label>
-              }
-              input={
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  autoComplete="email"
-                  {...register("email")}
-                />
-              }
-              error={errors.email}
-            />
-
-            <FormField
-              label={
-                <Label htmlFor="password" className="!font-sentient">
-                  Password
-                </Label>
-              }
+              label={<Label htmlFor="password">Password</Label>}
               input={
                 <Input
                   id="password"
@@ -145,85 +100,48 @@ export function SignUpForm({
                   placeholder="Password"
                   autoComplete="new-password"
                   {...register("password")}
+                  errorMessage={errors.password?.message}
                 />
               }
               error={errors.password}
             />
 
             <FormField
-              label={
-                <Label htmlFor="confirmPassword" className="!font-sentient">
-                  Confirm Password
-                </Label>
-              }
+              label={<Label htmlFor="role">Role</Label>}
               input={
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="Confirm Password"
-                  autoComplete="new-password"
-                  {...register("confirmPassword")}
+                <Select
+                  id="role"
+                  {...register("role")}
+                  errorMessage={errors.role?.message}
+                  options={[
+                    { value: "", label: "Select Role" },
+                    { value: "user", label: "User" },
+                    { value: "admin", label: "Admin" },
+                  ]}
                 />
               }
-              error={errors.confirmPassword}
+              error={errors.role}
             />
 
-            <div className="flex flex-col space-y-3">
-              <ControlledCheckbox
-                control={control}
-                name="agreedToTerms"
-                id="terms"
-                label={
-                  <>
-                    I agree to Dora&apos;s{" "}
-                    <a
-                      href="#"
-                      className="!font-sentient text-[#001363] cursor-pointer hover:underline"
-                    >
-                      Terms of Services
-                    </a>
-                  </>
-                }
-              />
-              <ControlledCheckbox
-                control={control}
-                name="agreedToPrivacy"
-                id="privacy"
-                label={
-                  <>
-                    I accept Dora&apos;s use of my data for the service and
-                    everything else describe in the{" "}
-                    <a
-                      href="#"
-                      className="!font-sentient text-[#001363] hover:underline"
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      href="#"
-                      className="!font-sentient text-[#001363] hover:underline"
-                    >
-                      Data Processing Agreement
-                    </a>
-                  </>
-                }
-              />
-            </div>
-
             <Button
+              className="w-full !font-medium mt-2 mb-3"
               type="submit"
-              className="w-full !font-sentient text-white"
               disabled={loading}
             >
               {loading ? "Loading..." : "Sign up"}
             </Button>
+
+            <div className="text-center text-slate-600 font-light text-sm dark:text-white/80 pb-6 !font-archivo">
+              Already have an account?{" "}
+              <a
+                href="/auth/login"
+                className="font-normal text-blue-600 hover:text-blue-800 transition hover:underline dark:text-white/80"
+              >
+                Login
+              </a>
+            </div>
           </div>
         </form>
-      </div>
-
-      <div className="text-center !font-sentient text-[#151515]/45 text-sm py-4 mt-4">
-        © 2025 Dora. All rights reserved.
       </div>
     </div>
   );

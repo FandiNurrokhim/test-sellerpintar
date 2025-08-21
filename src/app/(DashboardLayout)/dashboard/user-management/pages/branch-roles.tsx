@@ -198,7 +198,7 @@ export default function BranchRolePage() {
           variant="primary"
           title="Total Branch Roles"
           value={String(roles.length)}
-          icon={<Shield className="h-5 w-5 text-[#001363]" />}
+          icon={<Shield className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
         />
         <WidgetHeader
           title="Organizations"

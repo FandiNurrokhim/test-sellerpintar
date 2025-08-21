@@ -14,10 +14,13 @@ function Input({ className, type, error, errorMessage, ...props }: InputProps) {
   const isSearch = type === "search";
 
   return (
-    <div className="relative w-full">
+    <div className={cn("relative ", className)}>
       {isSearch && (
         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none">
-          <Search size={16} className="text-muted-foreground dark:text-white/70" />
+          <Search
+            size={16}
+            className="text-muted-foreground dark:text-white/70"
+          />
         </span>
       )}
       <input
@@ -25,7 +28,7 @@ function Input({ className, type, error, errorMessage, ...props }: InputProps) {
         data-slot="input"
         aria-invalid={error ? "true" : undefined}
         className={cn(
-          "file:text-foreground dark:file:text-white/80  placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-transparent dark:bg-input/10 dark:text-white/80 dark:border-gray-700 dark:placeholder:text-gray-400 flex h-9 w-full min-w-0 rounded-xs border border-[#D9D9D9] px-3 py-1 text-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          "file:text-foreground dark:file:text-white/80 placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground bg-transparent dark:bg-input/10 dark:text-white/80 dark:border-gray-700 dark:placeholder:text-gray-400 flex h-9 w-full min-w-0 rounded-md border border-slate-200 px-3 py-5 text-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
           errorMessage &&
             "border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
           isSearch ? "pl-9" : "",

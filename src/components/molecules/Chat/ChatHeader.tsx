@@ -76,7 +76,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
           </div>
           {isShared && (
             <Share2
-              className={`w-5 h-5 text-[#001363] dark:text-[#1447E6] cursor-pointer hover:text-[#001363] dark:hover:text-[#1447E6] transition-colors ${
+              className={`w-5 h-5 text-blue-600 hover:text-blue-800 transition dark:text-[#1447E6] cursor-pointer hover:text-blue-600 hover:text-blue-800 transition dark:hover:text-[#1447E6] transition-colors ${
                 disabled ? "opacity-50 cursor-not-allowed" : ""
               }`}
               onClick={() => {

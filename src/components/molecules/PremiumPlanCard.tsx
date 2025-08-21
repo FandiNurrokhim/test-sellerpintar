@@ -25,7 +25,7 @@ export function PremiumPlanCard() {
         {/* Button */}
         <button className="mt-6 text-xs w-30 bg-white text-[#1E1E1E] font-semibold rounded-full ps-3 py-1 flex items-center gap-2 shadow hover:bg-gradient-to-r hover:from-[#1A308F] hover:to-[#2F49B3] hover:text-white focus:outline-none cursor-pointer transition-all duration-300 !font-sentient btn">
           See Detail
-          <span className="inline-flex items-center justify-center w-7 h-7 p-2 rounded-full bg-[#001363] dark:bg-[#2F49B3] text-white ml-2 transition-transform duration-300 btn-hover:rotate-90 btn-hover:bg-white btn-hover:text-[#001363]">
+          <span className="inline-flex items-center justify-center w-7 h-7 p-2 rounded-full bg-[#001363] dark:bg-[#2F49B3] text-white ml-2 transition-transform duration-300 btn-hover:rotate-90 btn-hover:bg-white btn-hover:text-blue-600 hover:text-blue-800 transition">
             <IconArrowUp className="transition-transform duration-300 rotate-45 group-hover:rotate-90" />
           </span>
         </button>

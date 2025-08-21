@@ -23,7 +23,7 @@ export default function StepItem({
     <div
       className={`relative w-full flex items-center p-4 min-h-24 ${
         isActive
-          ? "bg-[#EEF2FB80] border border-[#D6DCE9] text-[#001363] rounded-2xl"
+          ? "bg-[#EEF2FB80] border border-[#D6DCE9] text-blue-600 hover:text-blue-800 transition rounded-2xl"
           : "text-[#A3AED0]"
       }`}
     >

@@ -88,7 +88,7 @@ export default function DashboardPage() {
             variant="primary"
             title="Total Products"
             value={String(10)}
-            icon={<Package className="h-5 w-5 text-[#001363]" />}
+            icon={<Package className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
           />
           <WidgetHeader
             title="Customer Insights"

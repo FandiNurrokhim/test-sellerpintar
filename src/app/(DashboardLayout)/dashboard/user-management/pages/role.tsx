@@ -305,7 +305,7 @@ export default function RolesPage() {
           variant="primary"
           title="Total Roles"
           value={String(roles.length)}
-          icon={<ShieldCheck className="h-5 w-5 text-[#001363]" />}
+          icon={<ShieldCheck className="h-5 w-5 text-blue-600 hover:text-blue-800 transition" />}
         />
         <WidgetHeader
           title="Organizations"

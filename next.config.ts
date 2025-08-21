@@ -20,7 +20,8 @@ const nextConfig: NextConfig = {
       "placehold.co",
       "dora-ai.sgp1.digitaloceanspaces.com",
       "api.qrserver.com",
-      "encrypted-tbn0.gstatic.com"
+      "encrypted-tbn0.gstatic.com",
+      "images.unsplash.com"
     ],
   },
 };

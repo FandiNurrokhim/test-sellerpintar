@@ -13,7 +13,7 @@ export function FormField({ label, input, error }: FormFieldProps) {
       {label}
       {input}
       {error && (
-        <div className="text-xs text-red-500 mt-1">
+        <div className="text-xs text-red-500">
           {typeof error === "string" ? error : error?.message}
         </div>
       )}

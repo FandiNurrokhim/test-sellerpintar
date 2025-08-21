@@ -39,7 +39,7 @@ const WidgetHeader: React.FC<WidgetHeaderProps> = ({
       <p className={`text-xs font-light mb-0 mt-1 text-[#A3AED0]`}>{title}</p>
       <p
         className={`text-lg font-semibold m-0
-        ${variant === "primary" ? "text-white" : "text-[#001363] dark:text-[#2F49B3]"}`}
+        ${variant === "primary" ? "text-white" : "text-blue-600 hover:text-blue-800 transition dark:text-[#2F49B3]"}`}
       >
         {value}
       </p>

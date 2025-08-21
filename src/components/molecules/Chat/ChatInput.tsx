@@ -67,7 +67,7 @@ export const ChatInput: React.FC<ChatInputProps & { disabled?: boolean }> = ({
               />
               <Button
                 type="button"
-                className={`w-[29px] h-[29px] flex items-center justify-center rounded-full border transition-colors duration-200 cursor-pointer text-[#001363] dark:text-blue-400 hover:text-white dark:hover:text-white
+                className={`w-[29px] h-[29px] flex items-center justify-center rounded-full border transition-colors duration-200 cursor-pointer text-blue-600 hover:text-blue-800 transition dark:text-blue-400 hover:text-white dark:hover:text-white
               ${
                 isFullscreen
                   ? "bg-[#001363] dark:bg-blue-600 text-white dark:text-white border-[#001363] dark:border-blue-600"
